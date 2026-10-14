@@ -52,3 +52,5 @@ npx expo export -p web --output-dir docs/app
 ## Notes
 
 Authentication is local to the device and there is no backend. Moving accounts and the garden data to a cloud service is the natural next step.
+
+© 2026 Virat Gupta. **All rights reserved.** Code is public for viewing only; reuse needs written permission.

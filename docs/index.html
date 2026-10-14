@@ -109,9 +109,10 @@ footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--muted);f
   </section>
 
   <footer>
-    <span>Herbal Garden · a personal project by Virat Gupta</span>
+    <span>© <span id="y"></span> Virat Gupta. All rights reserved.</span>
     <a href="https://github.com/Viratgupta13/herbal-garden">github.com/Viratgupta13/herbal-garden</a>
   </footer>
 </div>
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
