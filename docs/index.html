@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herbal Garden</title>
+<meta name="description" content="Herbal Garden is a mobile app to discover Ayurvedic herbs, track your own herb garden and test your knowledge with a quiz. Built with React Native and Expo.">
+<link rel="icon" href="img/favicon.png">
+<style>
+:root{--bg:#f6fbf4;--surface:#fff;--ink:#17301c;--muted:#4f6653;--brand:#2e7d32;--brand-d:#1b5e20;--tint:#e4f2e2;--line:#d5e6d3;--shadow:0 18px 50px rgba(27,94,32,.18)}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1a11;--surface:#16241a;--ink:#e6f2e6;--muted:#9db6a0;--brand:#6fcf75;--brand-d:#a5e6a9;--tint:#1d3322;--line:#27402c;--shadow:0 18px 50px rgba(0,0,0,.5)}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font-weight:800;font-size:20px;color:var(--brand-d);display:flex;gap:8px;align-items:center;text-decoration:none}
+.logo img{width:26px;height:26px}
+nav a.gh{font-weight:600;font-size:15px;text-decoration:none;padding:8px 16px;border:1.5px solid var(--brand);border-radius:99px;color:var(--brand-d)}
+nav a.gh:hover{background:var(--tint)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:40px 0 80px}
+.pill{display:inline-block;background:var(--tint);color:var(--brand-d);font-weight:600;font-size:14px;padding:4px 14px;border-radius:99px;margin-bottom:18px}
+h1{font-size:clamp(36px,5.5vw,58px);line-height:1.08;margin:0 0 18px;letter-spacing:-.02em}
+h1 span{color:var(--brand)}
+.lead{color:var(--muted);font-size:19px;max-width:520px;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;font-weight:700;text-decoration:none;padding:13px 26px;border-radius:99px;font-size:16px}
+.btn.primary{background:var(--brand);color:#fff}
+body .btn.primary{color:#fff}
+@media (prefers-color-scheme:dark){.btn.primary{color:#0f1a11}}
+.btn.primary:hover{filter:brightness(1.1)}
+.btn.ghost{border:1.5px solid var(--line);background:var(--surface)}
+.btn.ghost:hover{border-color:var(--brand)}
+.phone{width:min(100%,330px);margin:0 auto;aspect-ratio:9/19;background:#101a12;border-radius:44px;padding:11px;box-shadow:var(--shadow);position:relative}
+.phone iframe{width:100%;height:100%;border:0;border-radius:34px;background:#fff;display:block}
+.hint{text-align:center;color:var(--muted);font-size:14px;margin-top:14px}
+section{padding:64px 0}
+h2{font-size:clamp(28px,4vw,38px);margin:0 0 12px;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 36px;max-width:620px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px}
+.card h3{margin:10px 0 6px;font-size:19px}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.ico{font-size:28px}
+.shots{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.shots figure{margin:0}
+.shots img{width:100%;display:block;border-radius:22px;border:1px solid var(--line);box-shadow:0 8px 24px rgba(27,94,32,.12)}
+.shots figcaption{text-align:center;color:var(--muted);font-size:14px;margin-top:10px}
+.stack{display:flex;flex-wrap:wrap;gap:10px}
+.stack span{background:var(--tint);color:var(--brand-d);padding:6px 16px;border-radius:99px;font-weight:600;font-size:15px}
+footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--muted);font-size:15px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media (max-width:820px){.hero{grid-template-columns:1fr;gap:36px;padding-bottom:48px}.shots{grid-template-columns:repeat(2,1fr)}.lead{max-width:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#"><img src="img/favicon.png" alt="">Herbal Garden</a>
+    <a class="gh" href="https://github.com/Viratgupta13/herbal-garden">View on GitHub</a>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <span class="pill">Mobile app · React Native + Expo</span>
+      <h1>Your Ayurvedic companion, <span>in your pocket.</span></h1>
+      <p class="lead">Discover medicinal herbs, learn what they do, keep track of the ones you grow, and test yourself with a quick quiz. The live app runs right here, so try it.</p>
+      <div class="btns">
+        <a class="btn primary" href="app/" target="_blank" rel="noopener">Open full demo</a>
+        <a class="btn ghost" href="https://github.com/Viratgupta13/herbal-garden">Source code</a>
+      </div>
+    </div>
+    <div>
+      <div class="phone"><iframe src="app/" title="Herbal Garden live demo" loading="lazy"></iframe></div>
+      <p class="hint">Live demo: tap Get Started and look around</p>
+    </div>
+  </header>
+
+  <section id="features">
+    <h2>What it does</h2>
+    <p class="sub">A small app with a clear job: make herbal knowledge easy to browse and easy to put into practice.</p>
+    <div class="grid">
+      <div class="card"><div class="ico">🔎</div><h3>Search and filter</h3><p>Find herbs by name or by the symptom you want to address, then narrow the list with filters.</p></div>
+      <div class="card"><div class="ico">🌿</div><h3>Detailed herb pages</h3><p>Scientific name, family, climate, soil, sunlight, active compounds, therapeutic properties and dosage forms for each herb.</p></div>
+      <div class="card"><div class="ico">🪴</div><h3>My Garden</h3><p>Add herbs you grow, see care tasks for today, and follow each plant's growth stage from seed to mature plant.</p></div>
+      <div class="card"><div class="ico">🔔</div><h3>Alerts and seasonal tips</h3><p>Season-aware advice and quick care tips on the home screen, plus an alerts screen for reminders.</p></div>
+      <div class="card"><div class="ico">🧠</div><h3>Ayurvedic quiz</h3><p>An eight-question quiz about classic Ayurvedic herbs with instant feedback and a running score.</p></div>
+      <div class="card"><div class="ico">👤</div><h3>Accounts and profile</h3><p>Sign up, log in, edit your profile and replay the tutorial. State is saved on the device.</p></div>
+    </div>
+  </section>
+
+  <section id="screens">
+    <h2>Screens</h2>
+    <p class="sub">Captured from the web build of the app.</p>
+    <div class="shots">
+      <figure><img src="img/1-welcome.jpg" alt="Welcome screen" loading="lazy"><figcaption>Welcome</figcaption></figure>
+      <figure><img src="img/2-home.jpg" alt="Home screen with search and featured herbs" loading="lazy"><figcaption>Home</figcaption></figure>
+      <figure><img src="img/3-detail.jpg" alt="Herb detail page" loading="lazy"><figcaption>Herb details</figcaption></figure>
+      <figure><img src="img/4-quiz.jpg" alt="Herb quiz question" loading="lazy"><figcaption>Quiz</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="stack">
+    <h2>Built with</h2>
+    <p class="sub">One JavaScript codebase that runs on Android, iOS and the web.</p>
+    <div class="stack">
+      <span>React Native 0.81</span><span>Expo SDK 54</span><span>React 19</span><span>React Navigation 7</span><span>AsyncStorage</span><span>Reanimated</span><span>React Native Web</span><span>EAS Build</span>
+    </div>
+  </section>
+
+  <footer>
+    <span>Herbal Garden · a personal project by Virat Gupta</span>
+    <a href="https://github.com/Viratgupta13/herbal-garden">github.com/Viratgupta13/herbal-garden</a>
+  </footer>
+</div>
+</body>
+</html>
